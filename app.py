@@ -96,10 +96,27 @@ except Exception as e:
     st.stop()
 
 # --- Interface principal e lógica de validação ---
-
-# Lê o código de validação do parâmetro 'c' na URL
 params = st.query_params
-codigo_url = params.get('c', [None])[0]
+
+# =============================================================================
+# === BLOCO DE DEPURAÇÃO TEMPORÁRIO ===
+st.subheader("🔍 Informações de Depuração da URL")
+st.write("Abaixo estão os parâmetros brutos que o Streamlit extraiu da URL:")
+st.json(dict(params))
+st.markdown("---")
+# =============================================================================
+
+# --- LÓGICA DE EXTRAÇÃO DE PARÂMETRO ROBUSTA ---
+codigo_url = ""
+# Verifica se o parâmetro 'c' existe na URL
+if 'c' in params:
+    # Pega o valor. st.query_params pode retornar uma lista ou uma string.
+    # Este código lida com ambos os casos de forma segura.
+    valor_parametro = params['c']
+    if isinstance(valor_parametro, list):
+        codigo_url = valor_parametro[0]
+    else:
+        codigo_url = valor_parametro
 
 codigo_validacao = st.text_input(
     label="Código de Validação",
