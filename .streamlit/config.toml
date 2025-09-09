@@ -1,0 +1,19 @@
+[theme]
+# Cor primária para botões, links, etc.
+# Usaremos o seu laranja vibrante.
+primaryColor="#F74406"
+
+# Cor de fundo principal da aplicação.
+# Usaremos o seu preto absoluto.
+backgroundColor="#000000"
+
+# Cor de fundo de elementos secundários, como a sidebar.
+# Usaremos um tom um pouco mais claro que o preto para criar contraste.
+secondaryBackgroundColor="#1C1C1E" 
+
+# Cor do texto principal.
+# Usaremos o seu branco.
+textColor="#FFFFFF"
+
+# Fonte de fallback.
+font="sans serif"
