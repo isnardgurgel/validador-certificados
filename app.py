@@ -98,13 +98,7 @@ except Exception as e:
 # --- Interface principal e lógica de validação ---
 params = st.query_params
 
-# =============================================================================
-# === BLOCO DE DEPURAÇÃO TEMPORÁRIO ===
-st.subheader("🔍 Informações de Depuração da URL")
-st.write("Abaixo estão os parâmetros brutos que o Streamlit extraiu da URL:")
-st.json(dict(params))
-st.markdown("---")
-# =============================================================================
+
 
 # --- LÓGICA DE EXTRAÇÃO DE PARÂMETRO ROBUSTA ---
 codigo_url = ""
